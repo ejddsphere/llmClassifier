@@ -194,7 +194,7 @@ Install dependencies.
 ```bash
 npm install express openai dotenv
 ```
-**If there are issues with running standard npm install, these are the specific dependencies
+**If there are issues with running standard npm install, install the specific dependencies
 ---
 
 # Environment Variables
@@ -331,6 +331,7 @@ The application handles:
 * Invalid AI JSON responses
 * Network errors
 * Empty page content
+* Submission state errors
 
 ---
 # Security
