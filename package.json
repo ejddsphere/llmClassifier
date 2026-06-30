@@ -1,0 +1,25 @@
+```json
+{
+  "name": "website-classifier",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AI-powered website classifier using Next.js, Firecrawl, and OpenAI.",
+  "author": "",
+  "license": "MIT",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+  },
+  "dependencies": {
+    "@mendable/firecrawl-js": "^1.19.0",
+    "next": "^15.4.0",
+    "openai": "^5.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
+```
