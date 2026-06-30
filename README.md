@@ -591,7 +591,7 @@ The pipeline has multiple stages:
 * Suitable for production scaling
 * There could also be a **Private** subfolder if needed
 
-mermaid
+```mermaid
 flowchart TD
 
     U[User Browser] -->|Enter URL| UI[Next.js Frontend<br/>app/page.js]
@@ -613,3 +613,4 @@ flowchart TD
     PARSE --> API
 
     API --> UI
+```
