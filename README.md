@@ -397,3 +397,6 @@ This project uses:
 # Contact
 
 For questions, feature requests, or bug reports, please open an issue in the project's GitHub repository.
+
+# Note
+All contents for this project are in a small set of files.  For future buildout, subfolders should be used as necessary
