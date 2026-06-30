@@ -11,7 +11,7 @@ The application scrapes the webpage using Firecrawl, extracts the readable conte
 
 ---
 
-# Features
+# Features including input submission
 
 * Single URL submission interface
 * Website scraping using Firecrawl
@@ -273,7 +273,7 @@ http://localhost:3000
 
 ---
 
-# OpenAI Prompt
+# OpenAI Prompt and outputs from submission
 
 The application instructs the model to return only valid JSON containing:
 
