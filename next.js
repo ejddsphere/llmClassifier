@@ -303,8 +303,6 @@ const ai = await openai.responses.create({
   model: "gpt-5.5",
   input: `
 
-//Prompt:
-
 You are a website classifier.
 
 Your job is to classify the website into EXACTLY ONE of these categories:
