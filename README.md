@@ -145,7 +145,10 @@ Possible production storage:
 website-classifier/
 │
 ├── app/
-
+├── package.json
+├── README.md
+├──.gitignore
+│
 ├── components/
 │   ├── New Bitmap image.bmp
 │
@@ -163,10 +166,8 @@ website-classifier/
 │
 ├── docs/
 │   └── New Bitmap image.bmp
-│
-├── package.json
-├── README.md
-└── .gitignore
+
+
 ```
 
 ---
