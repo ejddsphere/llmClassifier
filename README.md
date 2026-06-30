@@ -380,6 +380,7 @@ This project uses:
 * React
 * Firecrawl
 * OpenAI API
+* Environment Variables stored in the .gitignore file (dummy keys for now)
 
 ---
 
@@ -391,3 +392,5 @@ For questions, feature requests, or bug reports, please open an issue in the pro
 All contents for this project are in a small set of files.  For future buildout, subfolders should be used as necessary
 
 All future state folders contain a dummy bmp file that should be replaced as necessary
+
+There could also be a **Private** subfolder if needed
