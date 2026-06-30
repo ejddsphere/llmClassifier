@@ -143,7 +143,7 @@ Possible production storage:
 
 ```text
 website-classifier/
-│ Root Folder
+│ Root Folder 
 ├── package.json
 ├── README.md
 ├──.gitignore
@@ -168,7 +168,7 @@ website-classifier/
 
 
 ```
-
+**Root folder would be converted to /app in the future state**
 ---
 
 # Installation
