@@ -187,7 +187,8 @@ cd website-classifier
 
 Install dependencies.
 
-```npm install express openai dotenv
+```bash
+npm install express openai dotenv
 ```
 **If there are issues with running standard npm install, these are the specific dependencies
 ---
