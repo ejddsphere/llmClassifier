@@ -590,3 +590,25 @@ The pipeline has multiple stages:
 * Easy to replace components
 * Suitable for production scaling
 * There could also be a **Private** subfolder if needed
+
+flowchart TD
+
+    U[User Browser] -->|Enter URL| UI[Next.js Frontend<br/>app/page.js]
+
+    UI -->|POST /api/process| API[Next.js API Route<br/>/app/api/process]
+
+    API --> VAL[Validate URL]
+    VAL --> SAVE[Save URL<br/>urls.json or DB]
+
+    SAVE --> FC[Firecrawl API]
+    FC -->|Scrape Webpage| FC2[Clean Markdown + Metadata]
+
+    FC2 --> TRIM[Trim & Prepare Content]
+
+    TRIM --> OPENAI[OpenAI API<br/>Classification + Summary]
+
+    OPENAI --> PARSE[Parse JSON Response]
+
+    PARSE --> API
+
+    API --> UI
