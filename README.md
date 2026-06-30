@@ -143,8 +143,7 @@ Possible production storage:
 
 ```text
 website-classifier/
-│
-├── app/
+│ Main Folder
 ├── package.json
 ├── README.md
 ├──.gitignore
