@@ -145,38 +145,28 @@ Possible production storage:
 website-classifier/
 │
 ├── app/
-│   ├── api/
-│   │   └── process/
-│   │       └── route.js
-│   ├── globals.css
-│   ├── layout.js
-│   └── page.js
-│
+
 ├── components/
-│   ├── CategoryBadge.jsx
-│   ├── LoadingProgress.jsx
-│   ├── ResultCard.jsx
-│   └── UrlForm.jsx
+│   ├── New Bitmap image.bmp
 │
 ├── lib/
-│   ├── classifier.js
-│   ├── firecrawl.js
-│   ├── openai.js
-│   ├── saveUrl.js
-│   └── validators.js
+│   ├── New Bitmap image.bmp
 │
 ├── data/
-│   └── urls.json
+│   └── New Bitmap image.bmp
 │
 ├── public/
+│   └── New Bitmap image.bmp
 │
 ├── utils/
+│   └── New Bitmap image.bmp
 │
 ├── docs/
+│   └── New Bitmap image.bmp
 │
 ├── package.json
 ├── README.md
-└── .env.local
+└── .gitignore
 ```
 
 ---
