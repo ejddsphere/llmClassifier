@@ -135,7 +135,7 @@ Current implementation:
 
 * Local JSON file (`urls.json`)
 
-Possible production storage:
+Possible production storage (future state):
 
 * PostgreSQL
 * SQLite
