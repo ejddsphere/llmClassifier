@@ -302,6 +302,9 @@ Output results classification:
 const ai = await openai.responses.create({
   model: "gpt-5.5",
   input: `
+
+//Main prompt
+
 You are a website classifier.
 
 Your job is to classify the website into EXACTLY ONE of these categories:
