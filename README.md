@@ -382,7 +382,7 @@ This project uses:
 
 * Next.js
 * React
-* Firecrawl
+* Firecrawl API
 * OpenAI API
 * Environment Variables stored in the .gitignore file (dummy keys for now)
 
