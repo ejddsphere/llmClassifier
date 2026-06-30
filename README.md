@@ -398,4 +398,5 @@ For questions, feature requests, or bug reports, please open an issue in the pro
 
 # Note
 All contents for this project are in a small set of files.  For future buildout, subfolders should be used as necessary
+
 All future state folders contain a dummy bmp file that should be replaced as necessary
