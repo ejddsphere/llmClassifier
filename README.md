@@ -198,7 +198,7 @@ npm install express openai dotenv
 Create a file named:
 
 ```text
-.env.local
+.gitignore
 ```
 
 Add the following variables.
