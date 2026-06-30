@@ -303,7 +303,7 @@ const ai = await openai.responses.create({
   model: "gpt-5.5",
   input: `
 
-//Main prompt
+/*Main prompt*/
 
 You are a website classifier.
 
