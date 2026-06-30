@@ -115,11 +115,15 @@ Examples:
 
 ## Frontend
 
+Frontend relies on React for processing
+
 * Next.js (App Router)
 * React
 * JavaScript
 
 ## Backend
+
+Backend APIs leverage OpenAI for categorization and summary while Firecrawl scrapes the URL for submissions
 
 * Next.js API Routes
 * OpenAI API
