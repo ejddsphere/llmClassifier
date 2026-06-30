@@ -1,5 +1,3 @@
-# llmClassifier
-HTML For initial page, Take a submitted URL, send to OpenAI for classification
 # Website Classifier
 
 An AI-powered web application built with **Next.js**, **Firecrawl**, and **OpenAI** that analyzes a website from a single URL and classifies it into one of four categories:
