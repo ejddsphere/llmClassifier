@@ -397,4 +397,202 @@ All contents for this project are in a small set of files.  For future buildout,
 
 All future state folders contain a dummy bmp file that should be replaced as necessary
 
-There could also be a **Private** subfolder if needed
+
+
+
+
+
+
+**Architecture design and thought process**
+
+
+Next.js (App Router)
+
+**Next.js was chosen as the core framework because it provides both:**
+
+* A frontend (React UI)
+* Backend API routes (serverless functions)
+
+
+Why this matters
+
+**Instead of maintaining two separate projects (frontend + backend), Next.js allows:**
+
+* Single codebase for full-stack development
+* Built-in routing for UI and APIs
+* Easy deployment (especially on Vercel)
+* Server-side execution for secure API key usage
+
+**The App Router (main folder) was used instead of the Pages Router because:**
+
+* It is the modern Next.js standard
+* It supports better data fetching patterns
+* It aligns with server-first architecture
+* OpenAI API
+
+**The OpenAI API is responsible for:**
+
+* Website classification
+* Summarization
+* Reasoning about page content
+* Why OpenAI was chosen
+* Strong natural language understanding
+* Reliable structured JSON output when prompted correctly
+* Ability to classify unstructured web content
+* Handles ambiguity (important for real-world websites)
+* Why structured JSON output is enforced
+
+**Instead of free-form text, the model is forced to return JSON because:**
+
+* It ensures predictable frontend rendering
+* It reduces parsing errors
+* It makes results database-ready
+* It enables analytics and filtering later
+* Firecrawl API
+
+**Firecrawl is used to:**
+
+* Scrape web pages
+* Extract readable content
+* Convert HTML into clean Markdown
+* Remove navigation noise and ads
+* Why Firecrawl instead of raw scraping
+
+**Traditional scraping (e.g., cheerio, puppeteer) was avoided because:**
+
+* It requires manual HTML parsing logic
+* Many websites are heavily JavaScript-rendered
+* Boilerplate code becomes complex quickly
+* Maintenance overhead is high
+
+**Firecrawl solves this by:**
+
+* Handling dynamic websites automatically
+* Returning clean, structured Markdown
+* Providing metadata (title, description)
+* Reducing engineering complexity significantly
+
+**This allows the app to focus on AI reasoning instead of scraping logic.**
+
+* URL Classification Model Design
+
+**The classification system is intentionally limited to four categories:**
+
+* ecommerce
+* social/ugc
+* news/media
+* other
+
+**Why only four categories**
+
+This constraint was added because:
+
+* It improves model accuracy
+* It reduces classification ambiguity
+* It makes UI/UX simpler
+* It enables downstream analytics (grouping, filtering, dashboards)
+
+**A smaller label space leads to higher consistency and fewer edge-case errors.**
+
+* URL Storage (JSON File)
+
+**Initially, URLs are stored in a local urls.json file.**
+
+Why this approach was used
+* Zero setup required
+* Works without external infrastructure
+* Ideal for development and prototyping
+* Easy to inspect/debug manually
+* Why it is not production-ready
+
+**This approach does NOT scale because:**
+
+* No concurrency control
+* No query capabilities
+* No indexing
+* Risk of file corruption under load
+
+**In production, this should be would be better replaced with long term storage along with a better file structure:**
+
+* PostgreSQL (preferred)
+* SQLite (lightweight alternative)
+* Prisma ORM (for structured access)
+* Next.js API Routes (/app/api/process)
+
+**The API route handles:**
+
+* Receiving user input (URL)
+* Validating input
+* Calling Firecrawl
+* Calling OpenAI
+* Returning structured JSON
+* Why API routes are used
+* Keeps API keys server-side (secure)
+* Avoids CORS issues
+* Simplifies deployment
+* Eliminates need for a separate backend server
+
+**This follows a serverless architecture model, which is ideal for this type of application.**
+
+* Client-Side React Form
+
+**The frontend uses a simple controlled form with:**
+
+* URL input
+* Submit button
+* Loading state
+* Result rendering
+
+**Why this approach**
+
+* Minimal UI complexity
+* Easy state management using useState
+* Fast user feedback loop
+* No external state libraries required
+
+**Loading states are handled client-side because:**
+
+* API calls are asynchronous
+* Firecrawl + OpenAI requests can take several seconds
+* User experience improves significantly with feedback
+* Progress & Loading Design (Conceptual)
+
+Although the current implementation uses a single loading state:
+
+* Step-based progress updates
+* Streaming responses (SSE or WebSockets in future)
+
+**Why this matters**
+
+The pipeline has multiple stages:
+
+* URL validation
+* Firecrawl scraping
+* Content extraction
+* OpenAI classification
+* Response formatting
+
+**Each step can fail or take time, so future versions can expose:**
+
+* Real-time progress bars
+* Live status updates
+* Streaming AI responses
+
+**Why This Architecture Works Well**
+
+**This stack was intentionally chosen because it separates concerns clearly:**
+
+* Layer	Responsibility
+* UI (Next.js page)	User interaction
+* API Route	Orchestration logic
+* Firecrawl	Web scraping
+* OpenAI	Intelligence + reasoning
+* JSON file	Temporary storage
+
+**This makes the system:**
+
+* Easy to understand
+* Easy to extend
+* Easy to replace components
+* Suitable for production scaling
+* There could also be a **Private** subfolder if needed
