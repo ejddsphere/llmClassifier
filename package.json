@@ -1,4 +1,3 @@
-```json
 {
   "name": "website-classifier",
   "version": "1.0.0",
@@ -9,7 +8,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "next start"
   },
   "dependencies": {
     "@mendable/firecrawl-js": "^1.19.0",
@@ -22,4 +21,9 @@
     "node": ">=20.0.0"
   }
 }
-```
+
+}
+"devDependencies": {
+  "eslint": "^9",
+  "eslint-config-next": "^15.4.0"
+}
