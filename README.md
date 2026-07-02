@@ -180,7 +180,7 @@ website-classifier/
 Clone the repository.
 
 ```bash
-git clone https://github.com/yourusername/website-classifier.git
+git clone https://github.com/ejddsshphere/llmclassifier.git
 ```
 
 Move into the project directory.
